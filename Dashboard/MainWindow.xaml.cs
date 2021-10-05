@@ -61,5 +61,17 @@ namespace Dashboard
                 MessageBox.Show("You said: " + dialog.ResponseText);
             }
         }
+        
+        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+            Console.WriteLine(e.OldValue);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var ProgressBar = (ProgressBar)this.FindName("ProgressBar");
+            ProgressBar.Value = (ProgressBar.Value + 10);
+        }
     }
 }
